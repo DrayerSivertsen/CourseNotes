@@ -38,6 +38,28 @@ identify threats -> create attack trees
 
 we are now avoiding neutral zones, all areas in a DFD is either trusted or untrusted
 
+## Example of threat tree
+(1) Browser
+Spoofing - requests to (2) (maybe phishing)
+(2) Process, (3) Externel dll
+Spoofed - create widget command (2)
+more on slides
+
+Circle/oval = Process (driving the component or application)
+Rectangle = Externel entity (not sure if driven by executable)
+
+## Threat analysis vs Threat modeling
+Threat modeling: defensive approach
+* designer/developer viewpoint
+Threat analysis: offensive approach
+
+
+
+## Notes for HA1
+User is an externel entity
+Remote webserver could be externel entity or process (rectangle)
+
+Do not use software assisted modeling tools
 
 
 
