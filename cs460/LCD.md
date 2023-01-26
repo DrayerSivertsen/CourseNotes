@@ -101,3 +101,5 @@ bl IQR_handler  // handle the IQR request instructions (call c code)
  // return back and load
 
 ‘knowledge you learn today will become obsolete tomorrow, its important to learn the principle not the specific hardware’
+
+What is the first byte in a pixel for?
