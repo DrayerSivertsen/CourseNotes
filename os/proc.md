@@ -206,3 +206,15 @@ address is fixed whereas in linux pid and ppid change dynamically
 the running->parent value wont change and the sibling and child will know about it
 
 
+
+# Midterm 2
+Combining the first midterm to have processes work with timers
+
+If you take a long time to handle interrupt process it will inhibit the time to get to other processes
+
+Relative time takes the difference between the previous so it only has to count the one timer, 
+this allows the interrupt handler to not have to decrement every timer
+
+Insert new timers into relative list based on the length
+
+The process is responsible for inserting to the timer list, it is not critical becuase the timer still keeps track of running time while it is inserted
