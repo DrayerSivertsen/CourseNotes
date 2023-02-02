@@ -139,3 +139,70 @@ in tswitch after save call scheduler, if ready put yourself in ready queue, if y
 includes multiple queues with levels, depending on the amount of CPU runtime it will switch the level of the queue this adjusts the priority
 
 Beginning of chapter 5 is what has been shown
+
+
+# Midterm 1
+
+process tree logic is the same as 360 file tree structures
+
+## kfork()
+
+* create a new process
+* initalize the process
+
+if running->child == 0
+// the parent has no child yet
+
+running->child = p
+
+else
+
+  q = running->child
+  while q->sibling
+    q = q->sibling
+
+  put b at the end of the linked list
+
+### Zombie disposal
+parent has to find the zombie and release the zombie back to free list
+
+### wait.c
+ksleep - process go to sleep on even, once sleeping you are not runable, can put into sleep list
+
+kwakeup - go to sleep list and see if there are any processes registered to an event that can be woken up
+
+P1 cannot sleep by command, other process can go to sleep
+
+### Commands
+exit produces zombie accompanied by exit code
+sleep adds to sleep list with event code
+ps prints the statuses of all the processes
+wakeup must wakeup process that slept on the same value, MUST correspond to sleep value, slept process returns back to ready queue
+
+
+Note: In real linux sleep and wake commands are internal to kernel
+
+When a process dies you must wakeup the parent
+
+### kbd.c
+press and release of key generates an interrupt
+
+when several processes share the same input device it causes chaos
+the solution is to put one process in the forground to handle the input device (keep one process active for input device)
+
+in our program P1 always gets the input from the keyboard
+
+real solution is to loop the processes on the same sleep code while data == 0
+then have a dedicated process to handle the input to avoid confusion
+
+if child pointer is null return -1 for error
+if there is a child then go search for child in child list
+if a zombie is found then it needs to be handled (get pid put zombie back to free list)
+if no zombie go back to sleep
+
+Want to sleep on something fixed (such as the address)
+address is fixed whereas in linux pid and ppid change dynamically
+
+the running->parent value wont change and the sibling and child will know about it
+
+
