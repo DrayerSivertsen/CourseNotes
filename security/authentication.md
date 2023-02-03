@@ -175,3 +175,63 @@ Then use that account to get access to others (email to get another)
   * lower security
   * higher false match
     * prevelance of unauthorized access
+
+## Tokens
+* RSA secureID
+  * OTP in sync with servers
+* smart cards
+   * embedded crypto processor
+* phones
+  * SMS messages
+* advantages: accurate than biometrics
+* problems: can be lost, stolen, cracked
+
+### Standalone Tokens
+* how do standalone tokens produce numbers in sync with a service?
+* same PRNG function and salt
+  * OAUTH-HOTP
+    * HMAC-based one time password
+      * pseudorandom number generator
+        * needs a unique salt
+          * every user is assigned a unique salt
+          * when a device is configured, it is set to the user's salt
+* same timestamp
+  * OAUTH-TOTP
+    * timestamp when a user clicks on 'generate token' is used
+
+### SMS Authentication
+* debated about SMS being a factor in MFA
+* SMS messages can be re-directed easily
+  * VoIP, account redirect with mobile carrier
+
+### Fast Identity ONline (FIDO) Alliance
+* emerging MFA online standard
+  * governs websites, web apps
+  * supports multiple devices
+
+
+### Challenge Response Protocol
+
+### Needham-Schroeder Protocol
+* same schroeder from 'Security Design Prinicples'
+  * Michael Schroeder - WSU grad
+
+### Kerberos Protocol
+* motivation
+  * credential storage on systems
+    * cant store all credentials on all systems for a cloud app
+* example: university accounts
+* solution: single authentication server
+* popular for network auth (e.g. Microsoft Active Directory)
+
+Terminology
+* authenication server (AS)
+  * authenticates each user's database of all users/passwords
+* ticket
+  * credentials used to authenticate systems
+* ticket-granting server (TGS)
+  * validates TGTs and provides service tickets
+* ticket granting ticket (TGT)
+  * used to obtain a service ticket from TGS
+* authenticator
+  * verifies sender of ticket is same as entitiy included in ticket
