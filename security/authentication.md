@@ -235,3 +235,35 @@ Terminology
   * used to obtain a service ticket from TGS
 * authenticator
   * verifies sender of ticket is same as entitiy included in ticket
+
+Authentication occurs through a 3rd party server and then communication can take place
+
+### OpenID Protocol
+Provides trusted third-party services for authentication
+
+The user registers with a few authentication services, limiting the number of password needed to login
+
+1. Requests user signin 
+2. Opts to "Sign in with Google Apps Account"
+3. Performs discovery
+4. Responds with XRDS document
+5. Requests login auth
+6. Redirect to Google sign-in page
+7. Logs-in and approves 3rd-party authentication
+8. Returns user identity
+9. Allows user access to protected features
+
+* multiple sub-protocols
+  * Oauth, XRDS
+* problems
+  * trust
+  * privacy (services sees all the sites you visit)
+  * companies store your web traffic data
+    * data is money
+
+### Authentication Protocols
+* MFA apps are still insecure
+* vulnerable to 
+  * phishing
+  * trojan/malware
+* evidence for cracking MFA exists
