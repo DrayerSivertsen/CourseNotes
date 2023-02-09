@@ -12,3 +12,7 @@ findViewById() - allows you to find an object by its default or custom ID
 onClick - allows you to set the function called when a click event is invoked
 
 
+Do not need fractional parts (no decimals, division passes to int)
+Program CANNOT crash from floats
+
+Chaining done by accumulating a value
