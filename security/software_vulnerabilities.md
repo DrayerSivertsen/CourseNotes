@@ -1,4 +1,4 @@
-# Software Vulnerabilities
+# Software Vulnerabilities Part 1
 * pervasive
 
 ### CVSS 
@@ -41,3 +41,51 @@ Score 0 - 10 where 0 is low and 10 is critical
 ### Memory Corruption
 * corrupt a memory stack by overflowing buffers (stack or heap)
 * overflowing
+
+### Potential Attacks
+* potential attacks using memory corruption
+    * stack-base buffer overflow
+    * return address corruption (side effect of overflow)
+    * instruction execution order corruption (side effect of overflow)
+
+### Defense
+* stack canaries
+    * random value added to a stack
+    * verify the random value and its location before return
+    * proves integrity of the stack's memory registers
+
+canarie: a random number or string
+
+* access control
+    * configure
+        * code to be rx but not w
+        * memory stacks to be rw but not x
+
+* address space layout randomization (ASLR)
+    * randomize memory addresses for each execution
+
+inode = index node
+
+
+# Software Vulnerabilities Part 2
+
+### Input Validation and Representation
+* untrusted inputs accepted by programs
+    * no input validation
+    
+### Temporal and State-based
+* incorrect assumptions regarding time and state of the program
+    * result of complexity due to concurrency and shared system resources
+* attacks
+    * race condition
+    * deadlock
+    * reused authentication sessions
+### API Abuse
+* API - contract between a client and server
+    * either party may fail to uphold their part of the contract
+* possible abuses
+    * malware injection
+    * unchecked return value
+    * misuse of privilege management
+    * string manipulation functions
+
