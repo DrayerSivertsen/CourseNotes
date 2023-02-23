@@ -29,3 +29,7 @@ Allows you to get the bare minimum
 
 ```sudo apt-get install libncurses-dev flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf```
 Should be run to get all/rest
+
+
+## RISC
+Reduced Instruction Set Computer
