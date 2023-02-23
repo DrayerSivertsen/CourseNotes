@@ -13,6 +13,8 @@ modprobe - allows for the search of modules
 
 make mrproper - cleans previous builds to allow for a rebuild
 
+make menuconfig - opens the configuration file to alter the build
+
 make -j
 -j stands for jobs -j16 allows you to use all 16 cores to run jobs faster
 
