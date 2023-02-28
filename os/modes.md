@@ -46,3 +46,26 @@ swi #0 - used to switch from kernel mode to user mode
 
 by adding user mode and switching to kernel mode to execute commands (syscalls) we are working towards full blown file system
 
+pg table 2048 
+
+entries in page table start at 2048
+```
+pgdir[2048] = 0x80032
+```
+
+Page table is contiguous virtually but point to physical addresses in different locations
+
+fork, grab new process and initalize it to ready queue. Now we will be adding an additional step of creating the process with a user mode image
+
+When a system call is made from user mode it causes it ot enter the kernel to execute SVC handler, the user mode is saved in a register into empty stack
+
+Stack contains user mode registers and kernel mode registers
+
+# Initalizing kstack for switch between kernel and user mode
+1. clear all the "saved" registers to 0
+2. set saved ksp to kstack
+3. set KLR = goUmode, so that p will resume to goUmode
+4. set ULR to VA(0), so that p will execute from VA=0 in Umode
+5. set new process usp to point at utack TOP and uspsr to Umode
+
+Every 16mb is a different processes page table
