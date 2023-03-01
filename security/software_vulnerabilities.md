@@ -80,6 +80,16 @@ inode = index node
     * race condition
     * deadlock
     * reused authentication sessions
+
+### Race Condition Attacks
+* program checks the state of a resource before using it
+* state can change between the check and use
+* the check is invalidated if the state changes
+* mitigations
+    * avoid using shared/temp directories
+    * store files in protected directories
+    * use access tokens for shared resources
+    * open->check->operate
 ### API Abuse
 * API - contract between a client and server
     * either party may fail to uphold their part of the contract
@@ -88,4 +98,54 @@ inode = index node
     * unchecked return value
     * misuse of privilege management
     * string manipulation functions
+
+### Security Failures
+* program incorrectly implements security functions
+    * caused by programmers overlooking or incorrectly assuming functions
+* examples
+    * unchecked randomness
+    * unchecked privileges
+    * missing access controls
+    * namesake cryptography
+
+Unchecked randomness
+* debian openssl 2008
+    * dev accidentally removed code to randomize keys
+    * possiblity of unique keys went down from millions to 32,797
+    
+### Errors
+* mishandled errors reported
+* examples
+    * nullpointerexception
+    * catch block empty
+    * catch block overly-broad
+
+Null pointer
+* null pointer dereferences occur when a program expects a non-null pointer, but the pointer turns out to be null
+* typically causes a program crash or exit
+* can be created by several factors including race conditions
+* mitigation
+    * always check pointers for null
+
+### Code Quality
+* poor quality code leads to unintended program operations
+* examples
+    * memory leaks
+    * use after release
+    * double references
+    * unreleased resources
+
+### Encapsulation
+* incorrectly defined boundaries between systems
+* data and users crossing properly defined boundaries
+* examples
+    * trust boundary violation
+    * information / data leaks
+    * executable traces
+
+Heartbleed
+* heatbleed violates trust boundaries to leak inaccessible data
+* payload contains an instruction to go beyond the intended register length
+* mitigations
+    * before providing data, always check for request register length
 

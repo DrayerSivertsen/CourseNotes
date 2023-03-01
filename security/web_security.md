@@ -1,5 +1,61 @@
 # Web Security
 
+## HTTP
+* hypertext transfer protocol
+* used to retrieve/post content from a server
+* example content
+    * HTML
+    * JS
+    * Media (images, videos, flash apps)
+    * Cascading style sheets
+* enables 'client-server' architecture of the web
+* ports
+    * HTTP: TCP 80
+    * HTTPS: TCP 443
+
+### HTTP Reqests
+* three components
+    * HTTP verbs (GET, POST, HEAD, DELETE, PUT)
+    * HTTP version (e.g. HTTP/2, HTTP/3)
+    * uniform resource locators (URL)
+        * identifies the location of a resource on a web server
+        * 3 parts: protocol, server address, resource being accessed
+
+### HTTP Verbs
+* GET
+    * retrieve data from a server
+    * can be used to get POST verbs, which then post data
+    * 4 parts: verb, resource being accessed, variable being invoked, version
+* POST
+    * submits data to the server
+    * can be used to submit GET verbs, which then retrieve data
+    * 4 parts: verb, resource being accessed, variable being invoked, version
+* other verbs exist HEAD, TRACE, PUT, DELETE etc.
+
+### HTTP Response
+* status code
+    * 2xx: success
+    * 3xx: redirect
+    * 4xx: client error (404: file not found, location invalid)
+    * 5xx: server error
+* content type
+    * type of the data returned
+    * HTML, JS, CSS, media, etc.
+* content length
+    * number of bytes (KB, MB, GB, ...)
+
+### Nature of HTTP
+* HTTP is stateless by default
+* HTTP is forced to be stateful through using cookies/session tokens
+* cookies: containers storing variable data on web browsers
+* session tokens
+    * identifiers (ideally random) to uniquely identify every authenticated session
+* session tokens and cookies together enable websites to have stateful memory
+    * examples
+        * amazon remembering what you purchased
+        * google tracking all the websites you visit
+
+
 SQL - Structured Query Language
 
 * SQL commands are uaually called queries
