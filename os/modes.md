@@ -69,3 +69,22 @@ Stack contains user mode registers and kernel mode registers
 5. set new process usp to point at utack TOP and uspsr to Umode
 
 Every 16mb is a different processes page table
+
+A page table has 4k entries each entry has:
+- domain
+- kernel rw
+pattern of page table: 0x 4 1 2
+
+in newer versions of ARM the domain has been removed
+
+page table entry setting 258 entries because
+256 mb of ram + 2 mb of I/O
+
+80000 = 80mb
+
+0xC32 sets the page table entry to be read/writable by user mode process
+
+change p->usp (int*)VA(0x100000); to 2mb
+
+once at virtual address you can locate the physical address using the page table 
+
