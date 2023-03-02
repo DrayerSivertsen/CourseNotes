@@ -88,3 +88,4 @@ change p->usp (int*)VA(0x100000); to 2mb
 
 once at virtual address you can locate the physical address using the page table 
 
+on average half of an os memory was used, each allocated memory has a hole on either side now page table allows for contiguous memory.
