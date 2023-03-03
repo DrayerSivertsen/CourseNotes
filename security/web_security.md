@@ -126,4 +126,45 @@ uri - protocol, server address, port
 * creates a white-list policy of content that is allowed to load on a page
     * white-list blocked by default
     * the administrator must specify all exceptions
-* specific CSP options for different HTML and JS elements
+* specific CSP options for different HTML and JS elements 
+
+* advantages
+    * allows granular control of web content access
+    * prevents stored XSS and reflected XSS
+* disadvantages
+    * higher bureaucratic overhead
+    * higher rigidity and lower flexibility
+
+### Cross Site Request Forgery (CSRF)
+* confused deputy problem, but for web browsers
+* trick users into executing a malicious script
+* browsers allow the script execution since a legit user initiated the script
+
+* user is logged into a site
+* convince user to click a link that is legit but also malicious
+    * e.g. a link to retrieve cookies and session tokens of the user
+* the browser follows SOP and since the user is requesting their cookies and tokens, sends them to the link's recipient
+* but the link's recipient is not the user, it's the attacker
+
+### Cross Site Request Forgery Protections
+* CSRF token
+    * add random token to each request
+    * server injects the CSRF token into the user's session
+    * server checks for the CSRF token before responding
+* HTTP headers
+    * reference header; obsolete due to automated spoofing
+
+### HTTPS Problems
+* HTTPS uses TLS to encrypt HTTP communication
+* converting HTTP to HTTPS is not easy
+    * HTTP pages are often redirected to HTTPS
+        * MiTM attack
+    * HTTPS pages refer to other pages that are HTTP
+        * browser sends data unencrypted to HTTP destination
+    * TLS encryption CS compromised
+        * game over
+
+### Solutions for HTTPS Problems
+* ensure HTTPS pages don't refer to HTTP
+* don't redirect HTTP to HTTP, instead remove HTTP pages and create a forwarding address
+* no solution for TLS CS compromise
