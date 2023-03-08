@@ -23,3 +23,14 @@
     * service monitoring
     * temporal monitoring
     * content monitoring
+
+## EverCookies
+* evercookies are seemingly persistent cookies
+    * javascript API
+    * cookies automatically repopulate even if you delete them
+    * done by copying cookie content into all available data stores
+    * scripts are used to enable the auto repop
+* evercookies started out to enable data storage for web browsers
+    * user data
+    database items
+    
