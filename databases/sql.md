@@ -142,3 +142,36 @@ WHERE condition;
     - any modification that causes it to become false is rejected
 * similar to tables, assertions can be dropped by a DROP command
 
+## Triggers
+* Motivation:
+    - assertions are powerful, but they need to be checked for all transactions
+    - attribute and tuple based checks are checked at known times, but are not powerful
+    - triggers enable database programmers to specify
+        * when to check a constraint
+        * what exactly to do
+Note: triggers may cause cascading effects
+* triggers are not part of SQL2 but included in SQL3
+
+* a trigger has 3 parts:
+    - an event (e.g. update to attribute)
+    - a condition (e.g. a query to an attribute)
+    - an action (deletion, update, insertion)
+    - when the event happens, the system will check the condition(constraint), and if satisfied, will perform the action
+    - this, also called "ECA" - Event Condition Action
+
+* triggers:
+    1. move the monitoring logic from applications into the DBMS
+    2. enforce constraints
+        * more powerful than other constraints systems
+        * allows automatic constraint handling policy
+
+### Elements of Triggers
+1. declaration of trigger
+2. timing of action execution: before, after, or instead of triggering event
+3. the action can refer to both the old and new state of the database
+4. a condition is specified with a WHEN clause
+5. the action can be performed either
+    - once for every tuple or
+    - once for all the tuples that are changed by the database operation
+6. update events may specify a particular column or set of columns
+
