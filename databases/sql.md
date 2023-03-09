@@ -89,5 +89,56 @@ the NOT NULL command is not allowed because when a table is altered the new attr
 work around: allow NULL values then change the values from NULL, then update back to not allowing NULL
 
 
+## Database Modifications
+* a modification command does not return a result, but changes the database in some way
+* three kinds of modification
+    - insert a tuple or tuples
+    - delete a tuple or tuples
+    - update the values of an existing tuple or tuples
 
+### Tuple insertion
+* can drop attribute names if we provide all values in order
+* if we don't provide all attributes, they will be willed with NULL
+
+Default Values
+* in a CREATE TABLE statement, we can define a DEFAULT value for an attribute
+* when an inserted tuple has no value for that attribute, the default will be used
+
+Insertion of a query's result
+* we may insert the entire result of a query into a relation using the form
+```
+INSERT INTO relation
+(subquery);
+```
+
+Deletion
+* to delete tupes satisfying a condition from some relation:
+```
+DELETE FROM relation
+[WHERE condition];
+```
+* there is no way to delete only a single occurence of a tuple that appears twice in a relation
+
+Deletion proceeds in two stages:
+1. mark all tuples for which the WHERE condition is satisfied
+2. Delete the marked tuples
+
+## Updates
+* to change certain attributes in certain tuples of a relation:
+```
+UPDATE relation
+SET assignments
+WHERE condition;
+```
+
+## Assertions
+* so far most contraints are within one table
+    - attribute-based checks
+    - tuple based checks
+* Assertions:
+    - constraints over a table as a whole or multiple tables
+    - it is a boolean valued SQL expression that must be true at all times
+* an assertion must always be true at transaction boundaries
+    - any modification that causes it to become false is rejected
+* similar to tables, assertions can be dropped by a DROP command
 
