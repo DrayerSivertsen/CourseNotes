@@ -16,3 +16,11 @@ What is MFA?
 What are message authentication codes (MAC)?
 What is a backdoor attack?
 What is a race condition attack?
+
+# CA03
+What is a backdoor attack?
+What is a logic bomb?
+What is DAC?
+What is access control?
+What is digital signature?
+What is substituation cipher?
