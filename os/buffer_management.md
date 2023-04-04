@@ -61,3 +61,7 @@ The problem occurs when a system shuts down before everything has been written b
 *This can be overcome with a sync, where periodically writes to the disk to prevent too much data from being lost. 
 
 sync goes through buffer cache and writes out all buffers to disk
+
+real user io used paging
+system calls use buffers (e.g. ls)
+
