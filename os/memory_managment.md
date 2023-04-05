@@ -1,4 +1,5 @@
 # Memory Management
+https://eecs.wsu.edu/~cs460/mem.pdf
 
 Virtual address used by program
 Physical address used by computer
