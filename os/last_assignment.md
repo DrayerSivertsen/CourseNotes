@@ -18,3 +18,16 @@ replace KC init and login with our own
 fork multiple logins, where each one will be its own terminal
 the login process then obtains three file descriptors stdin, stdout, stderr
 
+
+# Lab 7
+Two different buffer calls
+1. Get the whole block in 
+2. Get partial block and modify before writing back
+
+bp in dev list = write a search function in dev list
+
+We have to write the code for getblk and brelse (in pseudo code) all other code is given
+
+Everytime you get a block implement the requests by 1, if in dev list increment hits by 1
+
+emacs @4200
