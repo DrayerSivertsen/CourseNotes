@@ -39,3 +39,9 @@ Do mouse research on your own.
 
 # What pieces existing in the operating system that we have not gone over?
 How to combine io devices with files you need to link the file descriptor to devices. TO BE TALKED ABOUT IN CLASS
+
+# What is the difference between operating system and embedded operating system?
+The main difference between a general-purpose operating system and an embedded operating system is their design focus. General-purpose operating systems, such as Windows or macOS, are designed to run on a wide range of computer hardware and support a wide range of applications. They are typically larger and more complex than embedded operating systems and offer a broader range of features and functionality.
+
+Embedded operating systems, on the other hand, are designed to run on specific hardware platforms with limited resources, such as memory and processing power. They are typically smaller, faster, and more efficient than general-purpose operating systems and are optimized for specific tasks and applications. They often have real-time processing capabilities, which means they can respond quickly to input and produce output in a predictable and timely manner.
+
