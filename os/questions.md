@@ -27,3 +27,15 @@ new security
 switch process and entire table no need to switch entire kernel table always the same
 
 user mode stack is what changes
+
+
+# x86 architecture that is translated for the ARM architecture?
+We write the code and develop on the Linux x86 architecture. This code is then cross compiled to run on the ARM architecture.
+
+# How are mouse drivers different than keyboard?
+Typically in embedded operating systems there is no need for a mouse driver as terminal support through keyboard is the most common. Thus the professor has not dived into the workings of a mouse driver.
+
+Do mouse research on your own.
+
+# What pieces existing in the operating system that we have not gone over?
+How to combine io devices with files you need to link the file descriptor to devices. TO BE TALKED ABOUT IN CLASS
