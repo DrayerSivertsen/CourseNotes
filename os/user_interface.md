@@ -62,3 +62,5 @@ writes to different serial ports using uart.c driver
 stored in uart[] array is the serial port ex (tty)
 
 
+read write code uses buffer management by using bread, brelse to write/read from direct, indirect and double indirect blocks
+
