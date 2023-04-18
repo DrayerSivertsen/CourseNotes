@@ -65,3 +65,24 @@ Sorted Files
 # Indexes
 * an index on a file speeds up selections on the search key fields for the index
     * any subset of the fields of a relation can be the search key
+
+Works in a similar fashion as hash map 
+
+## Alternatives for Data entries
+* alternative 1:
+    - if this is used, index structure is a file organization for data records
+    - at most one index on a given collection of data records can use alternative 1
+* alternative 2 and 3: 
+    - data entries typically much smaller than data records. So, better than alternative 1 with large data records, especially if search keys are small
+    - alternative 3 more compact that alternative 2, but leads to variable sized data entries even if search keys are of fixed length
+
+## Index classifications
+1. primary vs secondary
+- if search key is the primary key, then called primary index. The index is guaranteed not to have duplicate search key values
+- otherwise called secondary key. May have duplicates
+- unique index: a secondary index with no duplicate search keys
+
+2. clustered vs unclustered
+- if order of data records is the same as, or 'close to', order of data entries, then called cluster index
+    - a file can be clustered on at most one search key
+    - alternative 1 implies clustered; in practice; clustered
