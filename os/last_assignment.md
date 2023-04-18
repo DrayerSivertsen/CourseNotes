@@ -25,6 +25,18 @@ interrupt handler handled by P0
 
 what is serial port (serial port interrupt handler)
 
+ls - use your stat to write ls
+
+more - display 25 lines to screen, enter returns one more line, space displays one more screen (similar to cat)
+
+cat filename | more - use 3 and 4 to still recieve input from user
+
+grep - without file, greps from stdin
+
+l2u - takes lowercase and turns it to upper case (if file makes uppercase copy)
+
+** need to set file descriptors before able to read write to screen, could open serial ports and write to serial (other terminal)
+
 
 # Lab 7
 Two different buffer calls
@@ -49,4 +61,10 @@ A PTS (pseudo-terminal slave) is a type of virtual terminal that emulates a hard
 
 The PTS (pseudo-terminal slave) is used by many programs in Linux to provide a terminal-like interface to users, even if the program doesn't have a built-in terminal. For example, if you use an SSH client to connect to a remote server, the remote server will create a PTS for your SSH session, allowing you to interact with the server through a terminal interface.
 ```
+
+```
+sync
+```
+
+command used to write out all the buffers to disk. When an acutal shut down occurs it performs multiple syncs to ensure that everything is correctly written to the disk. 
 
