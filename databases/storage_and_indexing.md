@@ -86,3 +86,23 @@ Works in a similar fashion as hash map
 - if order of data records is the same as, or 'close to', order of data entries, then called cluster index
     - a file can be clustered on at most one search key
     - alternative 1 implies clustered; in practice; clustered
+
+### Understanding the Workload
+* for updates in the workload:
+    - the type of update (insert/delete/update), and the attributes that are affected
+    - frequency of the updates
+
+# Choice of Indexes
+* one approach: consider the most important queries in turn. Consider the best plan using current indexes, and see if a better plan is possible with an additional index
+
+## Guidelines
+1. attributes in where clause are candidates for index keys
+    - exact match condition suggests hash index
+    - range query suggests tree index
+        - clustering is especially useful for range queries; can also help on equality queries if there are many duplicates
+2. multi-attribute search keys should be considered when a WHERE clause contains several conditions
+    - order of attributes is is important for range queries 
+    - such indexes can sometimes enable index-only strategies for important queries
+        - for index-only strategies, clustering is not important 
+3. try to choose indexes that benefit as many queries as possible. Since only one index can be clustered per relation, choose it based on important queries that would benefit the most from clustering
+
