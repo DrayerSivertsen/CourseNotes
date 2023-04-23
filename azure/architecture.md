@@ -88,4 +88,20 @@ Make a resource group structure that best fits your needs
 
 
 ## Azure Subscriptions
-Subscriptions are a unit of management, billing and scale. 
+Subscriptions are a unit of management, billing and scale. Similar to the way resource groups are a way to logically organize resources, subscriptions allow you to organize your resource gruops and billing. 
+
+Subscriptions provide authenticated and authorized access to Azure products and services. Azure subscription links to an Azure account, which is an identity in Azure Active Directory. 
+
+An account can have multiple subscriptions but is only required to have one. Also can be used to define boundaries. 
+
+Types of boundaries:
+- billing boundary: determines how an account is billed for using Azure. You can create multiple subscriptions for different types of billing requirements. 
+- access control boundary: access-management policies are applied at the subscription level, and you can create separate subscriptionsto reflect different organization structures. 
+
+Separate subscriptions by: 
+- environments: developing vs testing, security, compliance
+- organizational structures: lower cost resources to one team, IT full range
+- billing: one billing for production workloads, other for development and testing
+
+## Azure management groups
+An extra layer of hierarchy organization. If you have many subscriptions, you might need a way of efficiently managing access, policies, and compliance for them. A container for subscriptions called management groups. Subscriptions inherit the same conditions applied to their management group
