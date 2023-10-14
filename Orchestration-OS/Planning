@@ -1,0 +1,8 @@
+# Planning
+Initial Learnings and Planning of the Orchestration-OS project
+
+## Setting Up Kernel
+I want to go for a lightweight kernel leaving most of the development for myself to make it compatible for orchestration.
+
+Defconfig is a way to see the files that are deemed NECESSARY, then take only these files that will be used. The kernel becomes bulking holding onto functionality that won't be used. This also works towards total space optimization.
+
